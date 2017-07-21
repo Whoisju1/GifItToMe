@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <!-- jQuery JS 3.1.0 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Giftastic</title>
@@ -18,17 +19,17 @@
                 GifTastic
             </div>
             <div class="search-area">
-                <input type="text" placeholder="search for a gif of your choice">
-                <div class="search-btn-area">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                    <input type="button" value="search"></div>
+                <input type="text" placeholder="search for a gif of your choice" id="search-term">
+                <div id="search-btn-area">
+                    <i class="fa fa-search" aria-hidden="true" id="search-btn"></i>
+                </div>
             </div>
             <section>
-                <div class="gen-btn-area">
+                <div id="gen-btn-area">
                     Button Area
                     <br> That"s where the buttons go
                 </div>
-                <div class="gifarea">
+                <div id="display">
                     Gif display area
                 </div>
             </section>
