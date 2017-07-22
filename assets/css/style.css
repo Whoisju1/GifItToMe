@@ -4,3 +4,25 @@ html body {
     padding: 0;
     box-sizing: border-box;
 }
+
+.selected {
+    border: 3px solid yellow;
+}
+
+#display {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-flow: wrap;
+    align-content: space-around;
+    overflow: auto;
+    height: 70vh;
+}
+
+.gif {
+    margin: .5%;
+}
+
+.remove {
+    cursor: pointer;
+}
