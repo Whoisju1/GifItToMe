@@ -34,7 +34,7 @@ searchBtn.click(function(e) {
         searchTerms.map(function(term, index) {
             var quantity = 11;
 
-            let queryURL = `https://api.giphy.com/v1/gifs/search?q=${term}&api_key=dc6zaTOxFJmzC&limit=100`;
+            let queryURL = `https://api.giphy.com/v1/gifs/search?q=${term}&rating=g&api_key=dc6zaTOxFJmzC&limit=1000`;
 
             let gifs = [];
 
@@ -49,7 +49,7 @@ searchBtn.click(function(e) {
             });
 
             let BtnArea = $(`<div class="btn-area" id="${term}"></div>`);
-            let genBtn = $(`<button class="gen-btn btn btn-area">${term}</button>`).appendTo(BtnArea);
+            let genBtn = $(`<button class="gen-btn btn btn-primary">${term}</button>`).appendTo(BtnArea);
             let removeBtn = $(`<i class="fa fa-remove remove" aria-hidden="true"></i>`).appendTo(BtnArea);
             console.log('index: ', term);
             console.log(index);
@@ -69,6 +69,7 @@ searchBtn.click(function(e) {
                 // function to display gifs
                 function populate() {
                     display.empty();
+                    
                     // empty the display area before it's populated
                     gifs.map(function(obj, i, gifsArr) {
                         if (i < quantity) {
@@ -81,11 +82,11 @@ searchBtn.click(function(e) {
                             src=${stillImg}
                             data-still${stillImg} 
                             data-animated${animatedImg}
-                            class='gif'/>`).appendTo(display);
+                            class='gif img-thumbnail col-md-5'/>`).appendTo(display);
 
                             // toggle animation and css class
                             img.click(function() {
-                                $(this).toggleClass("selected").animate("shake");
+                                $(this).toggleClass("selected");
                                 let src = $(this).attr("src");
                                 if (src === stillImg) {
                                     $(this).attr("src", animatedImg);

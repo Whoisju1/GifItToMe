@@ -6,17 +6,16 @@ html body {
 }
 
 .selected {
-    border: 3px solid yellow;
+    -webkit-box-shadow: 0 1px 4px rgba(8.6%, 62.7%, 52.2%, .8), 0 0 40px rgba(8.6%, 62.7%, 52.2%, .1) inset;
+    -moz-box-shadow: 0 1px 4px rgba(8.6%, 62.7%, 52.2%, .8), 0 0 40px rgba(8.6%, 62.7%, 52.2%, .1) inset;
+    box-shadow: 0 1px 4px rgba(8.6%, 62.7%, 52.2%, .8), 0 0 40px rgba(8.6%, 62.7%, 52.2%, .1) inset;
 }
 
 #display {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-flow: wrap;
-    align-content: space-around;
-    overflow: auto;
     height: 70vh;
+    overflow: auto;
+    padding: 0 auto;
+    border-left: .4px solid lightgray;
 }
 
 .gif {
@@ -25,4 +24,27 @@ html body {
 
 .remove {
     cursor: pointer;
+}
+
+.btn-area:focus {
+    background: green;
+}
+
+.input-group {}
+
+.gen-btn-area {
+    max-height: calc(70vh - 36px);
+    overflow-y: auto;
+}
+
+.btn-area {
+    width: 100%;
+    margin: 1% auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+
+.gen-btn {
+    width: 90%;
 }
