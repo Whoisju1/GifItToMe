@@ -50,7 +50,7 @@ searchBtn.click(function(e) {
 
             let BtnArea = $(`<div class="btn-area" id="${term}"></div>`);
             let genBtn = $(`<button class="gen-btn btn btn-area">${term}</button>`).appendTo(BtnArea);
-            let removeBtn = $(`<i class="fa fa-trash-o remove" aria-hidden="true"></i>`).appendTo(BtnArea);
+            let removeBtn = $(`<i class="fa fa-remove remove" aria-hidden="true"></i>`).appendTo(BtnArea);
             console.log('index: ', term);
             console.log(index);
 
