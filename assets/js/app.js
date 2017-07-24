@@ -26,7 +26,10 @@ searchBtn.click(function(e) {
     let searchTerm = input.val().trim().toLowerCase();
 
     input.val("");
-
+    
+    // if input is empty do not execute anything below
+    if (!searchTerm) return;
+     
     console.log(`is "${searchTerm}" in Arr? Ans: ${searchTerms.includes(searchTerm)}`);
 
     if (searchTerms.includes(searchTerm)) {
