@@ -162,6 +162,8 @@ searchBtn.click(function(e) {
                                         quantity += 10;
                                         populate();
                                     });
+
+                                if (quantity >= gifsArr.length) showMoreBtn.remove();
                             }
                         });
                     }
