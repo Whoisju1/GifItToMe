@@ -25,19 +25,19 @@ searchBtn.click(function(e) {
 
     let searchTerm = input.val().trim().toLowerCase();
 
+    $('.sorry').remove();
+
     input.val("");
     
     // if input is empty do not execute anything below
     if (!searchTerm) return;
      
-    console.log(`is "${searchTerm}" in Arr? Ans: ${searchTerms.includes(searchTerm)}`);
-
     if (searchTerms.includes(searchTerm)) {
-        console.clear();
-        console.error(`"${searchTerm}" already exists.`);
+        // console.clear();
+        // console.error(`"${searchTerm}" already exists.`);
     } else {
-        console.clear();
-        console.log(`Since "${searchTerm}" is not in Arr, do AJAX search.`);
+        // console.clear();
+        // console.log(`Since "${searchTerm}" is not in Arr, do AJAX search.`);
         let loading = $(`<h1 class="loading">L<i class="fa fa-spinner fa-spin fa-1x" aria-hidden="true"></i>ADING</h1>`).appendTo(display);
         $('.gif').addClass('contrast');
         // this is an array that store all the gifs that will be put into the display area when the generated buttons are clicked
@@ -62,7 +62,7 @@ searchBtn.click(function(e) {
                 // create Buttons when all info is sound. 
                 // that way when the button is clicked there will always be images already available to be displayed
                 makeButtons();
-
+                ++count;
             }
 
             function makeButtons() {
@@ -74,7 +74,12 @@ searchBtn.click(function(e) {
                 let removeBtn = $(
                     `<i class="fa fa-remove remove" aria-hidden="true"></i>`
                 ).appendTo(BtnArea);
-
+                console.log('this is above the count if', count);
+                 if (count === 0) {
+                        console.log('this is in count!');
+                    $('.display').html(`<h1 class="sorry"> Click on the generated buttons to the left to view the gifs you searched for.</h1>`);
+                    console.log('count: ', count);
+                }
                 // when remove button is clicked remove the generated button
                 removeBtn.click(function() {
                     let parent = $(this).parent();
@@ -92,9 +97,6 @@ searchBtn.click(function(e) {
                     if (ind > -1) {
                         searchTerms.splice(ind, 1);
                     }
-
-                    // if it is the current entry being viewed then empty the display area of it's images
-                    
                 });
 
                 // the quantity of images to display initially
