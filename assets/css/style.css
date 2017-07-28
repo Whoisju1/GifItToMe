@@ -144,3 +144,16 @@
             opacity: 1;
         }
     }
+    
+    @media screen and (max-width: 1005px) {
+        .gen-btn-area {
+            height: auto;
+            margin-top: 2%;
+            max-height: 30vh;
+            overflow-y: auto;
+        }
+        #show-more {
+            position: relative;
+            margin: 8% auto;
+        }
+    }
